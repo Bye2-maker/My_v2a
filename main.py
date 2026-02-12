@@ -58,7 +58,7 @@ class App:
                 try:
                     self._V2M_(os.path.join(in_dir, name), os.path.join(tar, os.path.splitext(name)[0]+'.mp3'))
                 except:continue
-            messagebox.showinfo('OK'，'趕進看看吧')
+            messagebox.showinfo('OK','趕進看看吧')
             self.msg('目前無指令執行')
 
 
