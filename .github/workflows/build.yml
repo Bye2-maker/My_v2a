@@ -1,0 +1,34 @@
+name: Build EXE
+
+on:
+  push:
+    branches:["main"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PY
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install moviepy static-ffmpeg tk
+          pip install pyinstaller
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller --noconsole --onefile --name "HEX六邊行轉檔" main.py
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: HEX-V2M-EXE
+          path: dist/HEX六邊行轉檔.exe
+
+        
+      
