@@ -20,9 +20,10 @@ jobs:
         run: |
           pip install moviepy static-ffmpeg tk
           pip install pyinstaller
+          pip install imageio
       - name: Build with PyInstaller
         run: |
-          pyinstaller --noconsole --onefile --name "HEX六邊行轉檔" main.py
+          pyinstaller --noconsole --onefile --hidden-import='imageio' --name "HEX六邊行轉檔" main.py
 
       - name: Upload
         uses: actions/upload-artifact@v4
