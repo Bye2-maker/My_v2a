@@ -33,9 +33,11 @@ class App:
         if not f:
             return
 
-        s = filedialog.asksaveasfilename(title = "第二步：選擇存哪", defaultextension = '.mp3', filetypes = [('*.mp3')])
+        s = filedialog.asksaveasfilename(title = "第二步：選擇存哪", defaultextension = '.mp3', filetypes = [("MP3 檔案", '*.mp3')])
         if not s:
             return
+        name, ext = os.path.splitext(s)
+        s = name + '.mp3'
         
         self.msg.set('等一下！！！！')
         self.root.update()
