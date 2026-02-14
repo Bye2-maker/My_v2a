@@ -29,7 +29,7 @@ class App:
             video.audio.write_audiofile(outP, bitrate = '192k', logger = None)
 
     def v2m_single(self):
-        f = filedialog.askopenfilename(title = "第一步：選擇待處理檔案", filetypes = [('影片','*.mp4','*.mkv')])
+        f = filedialog.askopenfilename(title = "第一步：選擇待處理檔案", filetypes = [('影片', '*.mp4 *.mkv')])
         if not f:
             return
 
