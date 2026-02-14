@@ -68,7 +68,7 @@ class App:
             tk.Button(self.root, text = txt, command = type, width = 25, bg = '#eeeeee', relief = 'flat', pady = 8, font = ('Microsoft JhengHei', 10)).pack(pady = 10)
 
 if  __name__ == '__main__':
-    root = tk.TK()
+    root = tk.Tk()
     app = App(root)
     root.mainloop()
 
