@@ -23,7 +23,7 @@ jobs:
           pip install imageio imageio-ffmpeg
       - name: Build with PyInstaller
         run: |
-          pyinstaller --noconsole --onefile --colect-all imageio --hidden-import="imageio" --name "HEX六邊行轉檔" main.py
+          pyinstaller --noconsole --onefile --collect-all imageio --hidden-import="imageio" --name "HEX六邊行轉檔" main.py
 
       - name: Upload
         uses: actions/upload-artifact@v4
