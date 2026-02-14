@@ -16,8 +16,8 @@ class App:
         
         #UI
         tk.Label(root, text = 'Hex六邊形轉檔工具', font = ('Microsoft JhengHei', 16, 'bold'), bg = '#9d9d90', fg = '#333333').pack(pady = 20)
-        self.button('單個檔案', self.v2m_single)
-        self.button('資料夾檔案', self.v2m_batch)
+        tk.Button(self.root, text = '單一檔案轉換', command = self.v2m_single, width=25, bg='#eeeeee', relief='flat', pady=8).pack(pady=10)
+        tk.Button(self.root, text = '資料夾多檔案轉換', command = self.v2m_batch, width=25, bg='#eeeeee', relief='flat', pady=8).pack(pady=10)
 
         self.msg = tk.StringVar(value = '等待指令中！！')
         tk.Label(root, textvariable = self.msg, bg = '#9d9d90', fg = '#666666', wraplength = 350, font = ('Microsoft JhengHei', 9)).pack(pady = 30)
@@ -72,10 +72,6 @@ class App:
         self.msg('目前無指令執行')
 
 
-
-
-    def button(self, txt, type):
-        tk.Button(self.root, text = txt, command = type, width = 25, bg = '#eeeeee', relief = 'flat', pady = 8, font = ('Microsoft JhengHei', 10)).pack(pady = 10)
 
 if  __name__ == '__main__':
     root = tk.Tk()
